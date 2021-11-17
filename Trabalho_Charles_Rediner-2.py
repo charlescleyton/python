@@ -4,10 +4,10 @@ def menu():
 1 - para 3.4.1.13 LAB: Dias da semana
 2 - para 3.4.1.14 LAB: Pontos num plano
 3 - para 3.4.1.15 LAB: Triângulo
-# 4 - para 4.3.1.16 LAB: Histograma de frequência de carateres ordenados
-# 5 - para 4.3.1.17 LAB: Avaliar os resultados dos estudantes
-# 6 - para 4.4.1.8 LAB: O módulo OS
-# 7 - para 4.6.1.13 LAB: o módulo calendar
+4 - para 4.3.1.16 LAB: Histograma de frequência de carateres ordenados
+5 - para 4.3.1.17 LAB: Avaliar os resultados dos estudantes
+6 - para 4.4.1.8 LAB: O módulo OS
+7 - para 4.6.1.13 LAB: o módulo calendar
 0 - Fechar Menu 
 Escolha:  '''))
 
@@ -97,19 +97,20 @@ def lab_3_4_1_14():
 
 
 def lab_3_4_1_15 ():
-    
-    #não está funcionando
-    
+    class Point:
+        def __init__(self, x=0.0, y=0.0):
+            self._x = x
+            self._y = y        
     class Triangle:
         def __init__(self, vertice1, vertice2, vertice3):
-            self.__point1 = vertice1
-            self.__point2 = vertice2
-            self.__point3 = vertice3
+            self.__x = vertice1
+            self.__y = vertice2
+            self.__z = vertice3
     
         def perimeter(self):
-            self.__leg1 = self.__point1.distance_from_point(self.__point2)
-            self.__leg2 = self.__point1.distance_from_point(self.__point3)
-            self.__leg3 = self.__point2.distance_from_point(self.__point3)
+            self.__leg1 = self.__x.distance_from_point(self.__y)
+            self.__leg2 = self.__x.distance_from_point(self.__z)
+            self.__leg3 = self.__y.distance_from_point(self.__z)
             self.__leg = self.__leg1 + self.__leg2 + self.__leg3
             return self.__leg
     
