@@ -12,11 +12,11 @@ def menu():
 Escolha:  '''))
 
     if opcao == 1:
-        diasDaSemana()
+        lab_3_4_1_13()
     elif opcao == 2:
-        pontosNumPlano()
+        lab_3_4_1_14()
     elif opcao == 3:
-        triangulo()
+        lab_3_4_1_15()
     elif opcao == 4:
         caracteresOrdenados()
     elif opcao == 5:
@@ -33,7 +33,7 @@ Escolha:  '''))
         menu()
 
 
-def diasDaSemana ():
+def lab_3_4_1_13 ():
 
     class WeekDayError(Exception):
         pass
@@ -68,7 +68,7 @@ def diasDaSemana ():
         print("Sorry, I can't serve your request.")
 
 
-def pontosNumPlano():
+def lab_3_4_1_14():
     
     import math
 
@@ -96,7 +96,7 @@ def pontosNumPlano():
     print(point2.distance_from_xy(2, 0))
 
 
-def triangulo ():
+def lab_3_4_1_15 ():
     
     #não está funcionando
     
