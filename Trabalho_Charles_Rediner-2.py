@@ -4,10 +4,10 @@ def menu():
 1 - para 3.4.1.13 LAB: Dias da semana
 2 - para 3.4.1.14 LAB: Pontos num plano
 3 - para 3.4.1.15 LAB: Triângulo
-4 - para 4.3.1.16 LAB: Histograma de frequência de carateres ordenados
-5 - para 4.3.1.17 LAB: Avaliar os resultados dos estudantes
-6 - para 4.4.1.8 LAB: O módulo OS
-7 - para 4.6.1.13 LAB: o módulo calendar
+# 4 - para 4.3.1.16 LAB: Histograma de frequência de carateres ordenados
+# 5 - para 4.3.1.17 LAB: Avaliar os resultados dos estudantes
+# 6 - para 4.4.1.8 LAB: O módulo OS
+# 7 - para 4.6.1.13 LAB: o módulo calendar
 0 - Fechar Menu 
 Escolha:  '''))
 
