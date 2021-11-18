@@ -97,22 +97,21 @@ def lab_3_4_1_14():
 
 
 def lab_3_4_1_15 ():
+
+    import math
+
     class Point:
         def __init__(self, x=0.0, y=0.0):
             self._x = x
-            self._y = y        
+            self._y = y  
     class Triangle:
         def __init__(self, vertice1, vertice2, vertice3):
-            self.__x = vertice1
-            self.__y = vertice2
-            self.__z = vertice3
-    
+           self._x = math.sqrt(((vertice2._x - vertice1._x)**2)+(vertice2._y-vertice1._y)**2)
+           self._y = math.sqrt(((vertice3._x - vertice2._x)**2)+(vertice3._y-vertice2._y)**2)
+           self._z = math.sqrt(((vertice3._x - vertice1._x)**2)+(vertice3._y-vertice1._y)**2)
+
         def perimeter(self):
-            self.__leg1 = self.__x.distance_from_point(self.__y)
-            self.__leg2 = self.__x.distance_from_point(self.__z)
-            self.__leg3 = self.__y.distance_from_point(self.__z)
-            self.__leg = self.__leg1 + self.__leg2 + self.__leg3
-            return self.__leg
+            return self._x+self._y+self._z
     
     triangle = Triangle(Point(0, 0), Point(1, 0), Point(0, 1))
     print(triangle.perimeter())
