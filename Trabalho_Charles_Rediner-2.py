@@ -84,10 +84,10 @@ def lab_3_4_1_14():
             return self._y
 
         def distance_from_xy(self, x, y):
-            return math.sqrt(self.getx()*x + self.gety()*y)
+            return math.sqrt((self.getx()-x)**2 + (self.gety()-y)**2)
 
         def distance_from_point(self, point):
-            return math.sqrt(self.getx() * point.getx() + self.gety() * point.gety())
+            return math.sqrt((self.getx() - point.getx())**2 + (self.gety() - point.gety())**2)
         
         
     point1 = Point(0, 0)
@@ -106,9 +106,9 @@ def lab_3_4_1_15 ():
             self._y = y  
     class Triangle:
         def __init__(self, vertice1, vertice2, vertice3):
-           self._x = math.sqrt(((vertice2._x - vertice1._x)**2)+(vertice2._y-vertice1._y)**2)
-           self._y = math.sqrt(((vertice3._x - vertice2._x)**2)+(vertice3._y-vertice2._y)**2)
-           self._z = math.sqrt(((vertice3._x - vertice1._x)**2)+(vertice3._y-vertice1._y)**2)
+           self._x = math.sqrt((vertice2._x - vertice1._x)**2+(vertice2._y-vertice1._y)**2)
+           self._y = math.sqrt((vertice3._x - vertice2._x)**2+(vertice3._y-vertice2._y)**2)
+           self._z = math.sqrt((vertice3._x - vertice1._x)**2+(vertice3._y-vertice1._y)**2)
 
         def perimeter(self):
             return self._x+self._y+self._z
