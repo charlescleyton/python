@@ -18,9 +18,9 @@ Escolha:  '''))
     elif opcao == 3:
         lab_3_4_1_15()
     elif opcao == 4:
-        caracteresOrdenados()
+        lab_4_3_1_16()
     elif opcao == 5:
-        avaliarEstudante()
+        lab_4_3_1_17()
     elif opcao == 6:
         modOs()
     elif opcao == 7:
@@ -117,6 +117,57 @@ def lab_3_4_1_15 ():
     print(triangle.perimeter())
 
 
+#def lab_4_3_1_16():
+    
+
+def lab_4_3_1_17():
+    
+    from os import strerror
+    class StudentsDataException(Exception):
+        pass
+
+    class BadLine(StudentsDataException):
+        def __init__(self, message):
+            StudentsDataException.__init__(self, message)
+
+    class FileEmpty(StudentsDataException):
+        def __init__(self, message):
+            StudentsDataException.__init__(self, message)
+
+    entrada = ''
+    dic = {}
+    alunoNome = ''
+    diretorio = "C:/notas.txt"                    # also good: single / linux style
+    
+    try:
+        src = open(diretorio, "rt")
+        entrada = src.readlines()    # returns a list of strings, each string is a line of text 6.1.9.5
+        src.close()
+        if len(entrada) == 0:
+            raise FileEmpty("Error: O arquivo selecionado está vazio")
+        for x in range(len(entrada)):
+            tempo = entrada[x].split()
+            if len(tempo) != 3:
+                raise BadLine("Error: A pasta selecionada está vazia: " + str(x + 1))
+            alunoNome = tempo[0] + ' ' + tempo[1]
+            if alunoNome not in dic:
+                dic[alunoNome] = float(tempo[2])
+            else:
+                dic[alunoNome] += float(tempo[2])
+    except FileEmpty as fe:
+        print(fe)
+        exit(1)
+    except BadLine as bl:
+        print(bl)
+        exit(2)
+    except IOError as e:
+        print("Não é possível abrir o arquivo selecionado: ", strerror(e.errno))
+        exit(e.errno)
+
+    print('\n')
+    for key in sorted(dic.keys()):
+        print(key, dic[key])
+        
 while True:
     try:
         menu()    
