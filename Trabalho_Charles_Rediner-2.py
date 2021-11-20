@@ -185,6 +185,7 @@ def lab_4_3_1_17():
         print(key, dic[key])
 def lab_4_4_1_8():
     import os
+    os.chdir("ficheiro")
     print(os.getcwd())
         
 while True:
