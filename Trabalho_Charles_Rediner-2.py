@@ -123,7 +123,7 @@ def lab_4_3_1_16():
 
     try:
         hist = dict()
-        for line in open('../ficheiro/text.txt', 'rt'):
+        for line in open('text.txt', 'rt'):
             for ch in line:
                 print(ch, end='')
                 if ch != '.' and ch != '\n' and ch != ' ':
@@ -153,7 +153,7 @@ def lab_4_3_1_17():
     entrada = ''
     dic = {}
     alunoNome = ''
-    diretorio = "../ficheiro/notas.txt"                    # also good: single / linux style
+    diretorio = "notas.txt"                    # also good: single / linux style
     
     try:
         src = open(diretorio, "rt")
