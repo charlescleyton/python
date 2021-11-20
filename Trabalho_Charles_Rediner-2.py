@@ -186,15 +186,14 @@ def lab_4_3_1_17():
 def lab_4_4_1_8():
     import os
 
-    def find(root):
-        os.chdir(root)
-        print(os.getcwd())
+    def find(path,dir):
+        os.chdir(path)
         lista = os.listdir()
-        a = lista[0]
-        os.chdir("python")
-        print(os.getcwd())
-        
-    find("./tree")
+        for i in range(len(lista)):
+            if(lista[i]==dir):
+                print(os.getcwd())
+
+    find("./tree","python")
 
 while True:
     try:
