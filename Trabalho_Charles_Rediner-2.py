@@ -185,9 +185,17 @@ def lab_4_3_1_17():
         print(key, dic[key])
 def lab_4_4_1_8():
     import os
-    os.chdir("ficheiro")
-    print(os.getcwd())
+
+    def find(root):
+        os.chdir(root)
+        print(os.getcwd())
+        lista = os.listdir()
+        a = lista[0]
+        os.chdir("python")
+        print(os.getcwd())
         
+    find("./tree")
+
 while True:
     try:
         menu()    
