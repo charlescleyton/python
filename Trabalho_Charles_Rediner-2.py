@@ -22,7 +22,7 @@ Escolha:  '''))
     elif opcao == 5:
         lab_4_3_1_17()
     elif opcao == 6:
-        modOs()
+        lab_4_4_1_8()
     elif opcao == 7:
         modCalendario()
 
@@ -183,6 +183,9 @@ def lab_4_3_1_17():
     print('\n')
     for key in sorted(dic.keys()):
         print(key, dic[key])
+def lab_4_4_1_8():
+    import os
+    print(os.getcwd())
         
 while True:
     try:
