@@ -190,9 +190,14 @@ def lab_4_4_1_8():
         os.chdir(path)
         lista = os.listdir()
         for i in range(len(lista)):
-            if(lista[i]==dir):
+            if(lista[i]!=dir):
+                find(lista[i],dir)
+            else:
+                os.chdir(lista[i])
                 print(os.getcwd())
-
+                lista = os.chdir("..")
+        lista = os.chdir("..")
+        
     find("./tree","python")
 
 while True:
