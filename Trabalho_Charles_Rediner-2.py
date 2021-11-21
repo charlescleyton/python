@@ -34,10 +34,8 @@ Escolha:  '''))
 
 
 def lab_3_4_1_13 ():
-
     class WeekDayError(Exception):
         pass
-
     class Weeker:
         __weekdays = ['Mon','Tus','Wed', 'Thu','Fri','Sat', 'Sun']
         
