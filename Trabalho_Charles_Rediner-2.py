@@ -204,14 +204,12 @@ def lab_4_4_1_8():
 def lab_4_6_1_13():
     import calendar
     class MyCalendar(calendar.Calendar):
-        def count_weekday_in_year(self, ano, diaSemana):
+        def conta_semanas_em_anos(self, ano, diaSemana):
             contador = 0
             anoEmDias = []
             for x in range(1,13):
                 anoEmDias.append(list(self.monthdays2calendar(ano, x)))
-
             #print("Lista de Ano em Dias: \n", anoEmDias)
-
             for meses in anoEmDias:
                 for semanas in meses:
                     for diasDoMes, diasDaSemana in semanas:
@@ -222,7 +220,7 @@ def lab_4_6_1_13():
             return contador
 
     mc = MyCalendar()
-    print(mc.count_weekday_in_year(2000, 6))
+    print(mc.conta_semanas_em_anos(2000, 6))
 
 
 while True:
