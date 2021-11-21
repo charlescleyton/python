@@ -24,7 +24,7 @@ Escolha:  '''))
     elif opcao == 6:
         lab_4_4_1_8()
     elif opcao == 7:
-        modCalendario()
+        lab_4_6_1_13()
 
     elif opcao == 0:
         exit()
@@ -183,6 +183,8 @@ def lab_4_3_1_17():
     print('\n')
     for key in sorted(dic.keys()):
         print(key, dic[key])
+        
+        
 def lab_4_4_1_8():
     import os
 
@@ -199,6 +201,31 @@ def lab_4_4_1_8():
         lista = os.chdir("..")
         
     find("./tree","python")
+    
+    
+def lab_4_6_1_13():
+    import calendar
+    class MyCalendar(calendar.Calendar):
+        def count_weekday_in_year(self, ano, diaSemana):
+            contador = 0
+            anoEmDias = []
+            for x in range(1,13):
+                anoEmDias.append(list(self.monthdays2calendar(ano, x)))
+
+            #print("Lista de Ano em Dias: \n", anoEmDias)
+
+            for meses in anoEmDias:
+                for semanas in meses:
+                    for diasDoMes, diasDaSemana in semanas:
+                        if diasDoMes == 0:
+                            continue
+                        if diasDaSemana == diaSemana:
+                            contador+=1
+            return contador
+
+    mc = MyCalendar()
+    print(mc.count_weekday_in_year(2000, 6))
+
 
 while True:
     try:
