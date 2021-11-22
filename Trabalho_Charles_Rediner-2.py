@@ -37,22 +37,22 @@ def lab_3_4_1_13 ():
     class WeekDayError(Exception):
         pass
     class Weeker:
-        __weekdays = ['Mon','Tus','Wed', 'Thu','Fri','Sat', 'Sun']
+        __diasDaSemana = ['Mon','Tus','Wed', 'Thu','Fri','Sat', 'Sun']
         
         def __init__(self,day):
             try:
-                self.__stat = self.__weekdays.index(day)
+                self.__statu = self.__diasDaSemana.index(day)
             except:
                 raise WeekDayError
         
         def __str__(self):
-            return self.__weekdays[self.__stat]
+            return self.__diasDaSemana[self.__statu]
             
         def add_days(self, n):
-            self.__stat = (self.__stat + n ) % 7
+            self.__statu = (self.__statu + n ) % 7
             
         def subtract_days(self, n):
-            self.__stat = (self.__stat - n ) % 7
+            self.__statu = (self.__statu - n ) % 7
             
     try:
         weekday = Weeker('Mon')
@@ -127,7 +127,7 @@ def lab_4_3_1_16():
                 if ch != '.' and ch != '\n' and ch != ' ':
                     hist[ch.lower()] = hist.get(ch.lower(), 0) + 1
     except IOError as e:
-        print("I/O error occurred: ", strerror(e.errno))
+        print("I/O Ocorreu um erro: ", strerror(e.errno))
         
     print("\n\nHistograma:\n")
     for chave in sorted(hist.keys()):
@@ -204,23 +204,25 @@ def lab_4_4_1_8():
 def lab_4_6_1_13():
     import calendar
     class MyCalendar(calendar.Calendar):
-        def conta_semanas_em_anos(self, ano, diaSemana):
+        def conta_semanas_em_anos(self, ano, dia):
             contador = 0
-            anoEmDias = []
+            anoDias = []
             for x in range(1,13):
-                anoEmDias.append(list(self.monthdays2calendar(ano, x)))
-            #print("Lista de Ano em Dias: \n", anoEmDias)
-            for meses in anoEmDias:
+                anoDias.append(list(self.monthdays2calendar(ano, x)))
+            #print("Lista de Ano em Dias: \n", anoDias)
+            for meses in anoDias:
                 for semanas in meses:
-                    for diasDoMes, diasDaSemana in semanas:
+                    for diasDoMes, diaSemana in semanas:
                         if diasDoMes == 0:
                             continue
-                        if diasDaSemana == diaSemana:
+                        if diaSemana == dia:
                             contador+=1
             return contador
 
     mc = MyCalendar()
-    print(mc.conta_semanas_em_anos(2000, 6))
+    year = int(input ("Insira o ano: "))
+    weekDay = int(input ("Insira o dia da Semana: "))
+    print(mc.conta_semanas_em_anos(year, weekDay))
 
 
 while True:
